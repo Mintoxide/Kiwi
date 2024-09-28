@@ -170,12 +170,13 @@ int main() {
     return EXIT_SUCCESS;
 }*/
 
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
+#include <glad/glad.h>
 
 int main(void)
 {
     GLFWwindow* window;
-
     /* Initialize the library */
     if (!glfwInit())
         return -1;
@@ -190,6 +191,7 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
+    gladLoadGLLoader((GLADloadproc)glfwGetProcAddress); // ALWAYS call this after MakeContextCurrent
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
