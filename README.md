@@ -1,6 +1,9 @@
 # Kiwi
 
 ## Building
+
+For detailed info for unlisted platforms, please refer to [vulkan development environment guide](https://vulkan-tutorial.com/Development_environment)
+
 ### Visual Studio 2017+ (Windows) x64
 
 - Make sure your system supports Vulkan.
