@@ -10,6 +10,8 @@ namespace Kiwi {
 		uint32 Handle;
 
 	public:
+		MProperty(uint32, Handle);
+
 		VertexArrayObject();
 		void MakeCurrent();
 		void CreateAttributePointer(

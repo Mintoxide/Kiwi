@@ -20,15 +20,18 @@ namespace Kiwi {
 		WindowHandle = glfwCreateWindow(GetWidth(), GetHeight(), GetTitle(), nullptr, nullptr);
 		if (WindowHandle == nullptr) {
 			glfwTerminate();
-			throw std::runtime_error("OpenGL window initialization fault");
+			throw std::runtime_error("OpenGL window initialization failure");
 		}
 		FocusedWindow = this;
 		glfwMakeContextCurrent(WindowHandle);
-		gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		glViewport(0, 0, GetWidth(), GetHeight());
-
 		glfwSetFramebufferSizeCallback(WindowHandle, ResizeCallback);
 
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+		{
+			throw std::runtime_error("glad initialization failure");
+		}
+
+		glViewport(0, 0, GetWidth(), GetHeight());
 	}
 
 	GLWindow::GLWindow(uint16 width, uint16 height, const char* title) {
