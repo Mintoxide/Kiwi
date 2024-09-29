@@ -7,6 +7,7 @@
 #include <string>
 #include <cmath>
 #include <stdexcept>
+#include <vector>
 
 using uint64 = unsigned long;
 using int64 = long;
@@ -18,7 +19,7 @@ using int16 = short;
 using uint16 = unsigned short;
 
 #define MProperty(T,X) \
-virtual T Get##X() { return X; } \
+virtual T Get##X() const { return X; } \
 virtual void Set##X(T value) { X = value; }
 
 namespace Kiwi {

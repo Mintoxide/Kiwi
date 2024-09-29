@@ -28,6 +28,12 @@
     <Filter Include="Source\Core\Math">
       <UniqueIdentifier>{54e23e27-aec4-443e-b5a0-b2e29ed29670}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Core\Rendering">
+      <UniqueIdentifier>{773aa0e2-31da-4030-a9af-03e5a33bc0d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{0fbf581e-2db5-4a57-bd74-28c30a450e09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -35,6 +41,24 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Documents\Visual Studio 2022\Libraries\glad\src\glad.c">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferObject.cpp">
+      <Filter>Source\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.h">
+      <Filter>Headers\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArrayObject.h">
+      <Filter>Headers\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexArrayObject.cpp">
+      <Filter>Source\Core\Rendering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,5 +71,16 @@
     <ClInclude Include="Vec2.h">
       <Filter>Headers\Core\Math</Filter>
     </ClInclude>
+    <ClInclude Include="VertexBufferObject.h">
+      <Filter>Headers\Core\Rendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Basic.frag">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

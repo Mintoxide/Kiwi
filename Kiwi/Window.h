@@ -4,10 +4,6 @@
 
 namespace Kiwi {
 
-	class A {
-
-	};
-
 	class AbstractWindow {
 	private:
 		virtual void SetWindowSize(uint16 height, uint16 width) = 0;
@@ -39,46 +35,18 @@ namespace Kiwi {
 
 			inline static GLWindow* FocusedWindow;
 
-			void SetWindowSize(uint16 height, uint16 width) override {
-				SetWidth(width); SetHeight(height);
-				glViewport(0, 0, width, height);
-			}
+			void SetWindowSize(uint16 height, uint16 width) override;
 
 		public:
 			bool inline ShouldClose() const override { return glfwWindowShouldClose(WindowHandle); }
 
-			void ServeBuffer() override { 
-				glClear(GL_COLOR_BUFFER_BIT);
-				glfwSwapBuffers(WindowHandle); 
-			}
+			void ServeBuffer() override;
 
-			void Update() override {
-				ServeBuffer();
-				glfwPollEvents();
-			}
+			void Update() override;
 
-			void Initialize() override {
-				WindowHandle = glfwCreateWindow(GetWidth(), GetHeight(), GetTitle(), nullptr, nullptr);
-				if (WindowHandle == nullptr) {
-					glfwTerminate();
-					throw std::runtime_error("OpenGL window initialization fault");
-				}
-				FocusedWindow = this;
-				glfwMakeContextCurrent(WindowHandle);
-				gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-				glViewport(0, 0, GetWidth(), GetHeight());
+			void Initialize() override;
 
-				glfwSetFramebufferSizeCallback(WindowHandle, ResizeCallback);
-
-			}
-
-			GLWindow(uint16 width, uint16 height, const char* title) {
-				SetWidth(width);
-				SetHeight(height);
-				SetTitle(title);
-
-				Initialize();
-			}
+			GLWindow(uint16 width, uint16 height, const char* title);
 	};
 
 }
