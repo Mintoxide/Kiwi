@@ -8,11 +8,11 @@ namespace Kiwi {
 		glGenBuffers(1, &VBOHandle);
 	}
 
-	void VertexBufferObject::SubmitVertices(std::vector<float> vertices) {
-		CachedVertexCount = vertices.size() / 3;
+	void VertexBufferObject::SubmitVertices(std::vector<float>* vertices) {
+		CachedVertexCount = vertices->size() / 3;
 		std::cout << CachedVertexCount;
 		glBindBuffer(GL_ARRAY_BUFFER, VBOHandle);
-		glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, vertices->size() * sizeof(float), vertices->data(), GL_STATIC_DRAW);
 	}
 
 	void VertexBufferObject::RenderVertices() const {
@@ -21,7 +21,7 @@ namespace Kiwi {
 
 	void VertexBufferObject::ChangeVertices(const float* vertices, uint32 size, uint32 offset) const {
 		glBindBuffer(GL_ARRAY_BUFFER, VBOHandle);
-		glBufferSubData(GL_ARRAY_BUFFER, offset, size, vertices);
+		glBufferSubData(GL_ARRAY_BUFFER, offset * sizeof(float), size * sizeof(float), vertices);
 	}
 	
 }

@@ -11,7 +11,7 @@ namespace Kiwi {
 
 	public:
 		
-		void SubmitVertices(std::vector<float> vertices);
+		void SubmitVertices(std::vector<float>* vertices);
 		void RenderVertices() const;
 		void ChangeVertices(const float* vertices, uint32 size, uint32 offset) const;
 

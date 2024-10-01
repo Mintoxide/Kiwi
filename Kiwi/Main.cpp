@@ -27,12 +27,16 @@ int main(void)
         Shader(ShaderType::Fragment, Shader::FromFile("Basic.frag").data())});
     shaders.Activate();
 
-    auto vbo = VertexBufferObject();
-    vbo.SubmitVertices(std::vector<float> {
+    auto vertices = std::vector<float>{
         -0.5f, -0.5f, 0.0f,
          0.5f, -0.5f, 0.0f,
          0.0f,  0.5f, 0.0f
-    });
+    };
+
+    auto vbo = VertexBufferObject();
+    vbo.SubmitVertices(&vertices);
+    vertices[6] = 0.5f;
+    vbo.ChangeVertices(vertices.data(), 1, 6);
 
     auto vao = VertexArrayObject();
     vao.MakeCurrent();
