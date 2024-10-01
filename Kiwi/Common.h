@@ -22,6 +22,14 @@ using uint16 = unsigned short;
 virtual T Get##X() const { return X; } \
 virtual void Set##X(T value) { X = value; }
 
+#define MRemoveFromVec(V, E) \
+for(int i = 0; i < V ## .size(); i++) { \
+	if(E == V ## [i]) {					\
+		V ## .erase(V ## .begin() + i);	\
+		break;							\
+	}									\
+}		
+
 namespace Kiwi {
 
 

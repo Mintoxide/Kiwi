@@ -18,11 +18,7 @@ namespace Kiwi {
 
 		void RemoveChild(TreeNode<T>* node) {
 			node->Parent = nullptr;
-			for (int i = 0; i < Children.size(); i++) {
-				if (Children[i] == node) {
-					Children.erase(Children.begin() + i);
-				}
-			}
+			MRemoveFromVec(Children, node);
 		}
 
 		void SetParent(TreeNode<T>* node) {

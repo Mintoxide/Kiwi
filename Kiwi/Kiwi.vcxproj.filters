@@ -34,6 +34,12 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{0fbf581e-2db5-4a57-bd74-28c30a450e09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headers\Core\DataModel">
+      <UniqueIdentifier>{8305cfd9-b591-4384-a2d1-fcc2f1983fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Core\DataModel">
+      <UniqueIdentifier>{6df78e8e-236a-452c-a643-6dd60683e499}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -60,6 +66,9 @@
     <ClCompile Include="VertexArrayObject.cpp">
       <Filter>Source\Core\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Instance.cpp">
+      <Filter>Source\Core\DataModel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -74,8 +83,14 @@
     <ClInclude Include="VertexBufferObject.h">
       <Filter>Headers\Core\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="Instance.h">
+      <Filter>Headers\Core\DataModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Signal.h">
+      <Filter>Headers\Core\DataModel</Filter>
+    </ClInclude>
     <ClInclude Include="TreeNode.h">
-      <Filter>Headers</Filter>
+      <Filter>Headers\Core\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
