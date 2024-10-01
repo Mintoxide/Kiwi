@@ -7,13 +7,13 @@ namespace Kiwi {
 
 	private:
 		uint32 VBOHandle;
-		std::vector<float> Vertices;
-		int32 CachedVertexCount;
+		int32 CachedVertexCount = 0;
 
 	public:
 		
 		void SubmitVertices(std::vector<float> vertices);
 		void RenderVertices() const;
+		void ChangeVertices(const float* vertices, uint32 size, uint32 offset) const;
 
 		VertexBufferObject();
 
