@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Documents\Visual Studio 2022\Libraries\glad\src\glad.c" />
     <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="Instance3d.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shader.h" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="Common.h" />
     <ClInclude Include="Instance.h" />
+    <ClInclude Include="Instance3d.h" />
     <ClInclude Include="Signal.h" />
     <ClInclude Include="TreeNode.h" />
     <ClInclude Include="Vec2.h" />

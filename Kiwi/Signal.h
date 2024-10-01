@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Common.h"
-#include <functional>
 
 namespace Kiwi {
 
@@ -22,12 +21,7 @@ namespace Kiwi {
 		}
 
 		void Disconnect(void(*e)(Args...)) {
-			for (int i = 0; i < Events.size(); i++) {
-				if (Events[i] == e) {
-					Events.erase(Events.begin() + i);
-					break;
-				}
-			}
+			MRemoveFromVec(Events, e);
 		}
 
 		Signal() {

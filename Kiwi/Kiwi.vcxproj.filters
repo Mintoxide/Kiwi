@@ -69,6 +69,9 @@
     <ClCompile Include="Instance.cpp">
       <Filter>Source\Core\DataModel</Filter>
     </ClCompile>
+    <ClCompile Include="Instance3d.cpp">
+      <Filter>Source\Core\DataModel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -91,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="TreeNode.h">
       <Filter>Headers\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Instance3d.h">
+      <Filter>Headers\Core\DataModel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

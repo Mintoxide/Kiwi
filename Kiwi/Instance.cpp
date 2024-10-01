@@ -10,7 +10,7 @@ namespace Kiwi {
 	inline std::string Instance::GetName() { return Name; }
 
 	void Instance::SetName(std::string name) {
-		auto& prev = Name;
+		auto const& prev = std::move(Name);
 		Name = name;
 		Renamed.Fire(prev);
 	}

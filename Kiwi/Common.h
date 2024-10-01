@@ -19,8 +19,12 @@ using int16 = short;
 using uint16 = unsigned short;
 
 #define MProperty(T,X) \
-virtual T Get##X() const { return X; } \
-virtual void Set##X(T value) { X = value; }
+virtual T Get##X() const { return X; }		\
+virtual void Set##X(T value) { X = value; }	\
+
+#define MPropertyDecl(T,X) \
+virtual T Get##X() const;		\
+virtual void Set##X(T value);	\
 
 #define MRemoveFromVec(V, E) \
 for(int i = 0; i < V ## .size(); i++) { \
