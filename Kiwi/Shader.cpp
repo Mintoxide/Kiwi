@@ -55,7 +55,35 @@ namespace Kiwi {
 
 	}
 
-	void ShaderProgram::Activate() {
+	void ShaderProgram::Use() const {
 		glUseProgram(Handle);
+	}
+
+	void ShaderProgram::SetUniform(const std::string& name, const glm::vec4 v) const {
+		
+		glUniform4f(
+			glGetUniformLocation(Handle, name.data()),
+			v.x, v.y, v.z, v.w);
+	}
+
+	void ShaderProgram::SetUniform(const std::string& name, const glm::vec3 v) const {
+
+		glUniform3f(
+			glGetUniformLocation(Handle, name.data()),
+			v.x, v.y, v.z);
+	}
+
+	void ShaderProgram::SetUniform(const std::string& name, const glm::vec2 v) const {
+
+		glUniform2f(
+			glGetUniformLocation(Handle, name.data()),
+			v.x, v.y);
+	}
+
+	void ShaderProgram::SetUniform(const std::string& name, float v) const {
+
+		glUniform1f(
+			glGetUniformLocation(Handle, name.data()),
+			v);
 	}
 }

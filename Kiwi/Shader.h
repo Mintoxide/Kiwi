@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <glm.hpp>
 
 namespace Kiwi {
 
@@ -52,7 +53,12 @@ namespace Kiwi {
 		uint32 Handle;
 
 	public:
-		void Activate();
+		void SetUniform(const std::string& name, const glm::vec4 v) const;
+		void SetUniform(const std::string& name, const glm::vec3 v) const;
+		void SetUniform(const std::string& name, const glm::vec2 v) const;
+		void SetUniform(const std::string& name, float v) const;
+
+		void Use() const;
 		ShaderProgram(std::initializer_list<Shader> shaders);
 	};
 }

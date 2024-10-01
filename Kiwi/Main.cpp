@@ -25,22 +25,20 @@ int main(void)
     auto shaders = ShaderProgram({
         Shader(ShaderType::Vertex, Shader::FromFile("Basic.vert").data()),
         Shader(ShaderType::Fragment, Shader::FromFile("Basic.frag").data())});
-    shaders.Activate();
+    shaders.Use();
 
     auto vertices = std::vector<float>{
-        -0.5f, -0.5f, 0.0f,
-         0.5f, -0.5f, 0.0f,
-         0.0f,  0.5f, 0.0f
+        0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+       -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
+        0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f
     };
 
     auto vbo = VertexBufferObject();
     vbo.SubmitVertices(&vertices);
-    vertices[6] = 0.5f;
-    vbo.ChangeVertices(vertices.data(), 1, 6);
 
     auto vao = VertexArrayObject();
     vao.MakeCurrent();
-    vao.CreateAttributePointer(0, 3);
+    vao.CreateAttributes({ 3, 3 });
     
     while (!window.ShouldClose())
     {

@@ -1,4 +1,5 @@
 #include "VertexArrayObject.h"
+#include <iostream>
 
 namespace Kiwi {
 
@@ -11,21 +12,30 @@ namespace Kiwi {
 	}
 
 	void VertexArrayObject::CreateAttributePointer(
-		int32 attribute_index,
-		int32 attribute_size,
+		int32 attribute_count,
+		int32 total_count,
 		int32 gl_data_type,
 		bool normalization,
-		int32 offset,
 		size_t typesize
 	) {
+		AttributeCount += attribute_count;
 		glVertexAttribPointer(
-			attribute_index,
-			attribute_size,
+			AttributeIndex,
+			attribute_count,
 			gl_data_type,
 			normalization ? GL_TRUE : GL_FALSE,
-			attribute_size * typesize,
-			(void*)offset
+			total_count * typesize,
+			(void*)( (AttributeCount - attribute_count) * typesize)
 		);
-		glEnableVertexAttribArray(attribute_index);
+		glEnableVertexAttribArray(AttributeIndex);
+		AttributeIndex++;
+	}
+
+	void VertexArrayObject::CreateAttributes(std::initializer_list<int32> values) {
+		int size = 0;
+		for (auto v : values) { size += v; }
+		for (auto value : values) {
+			CreateAttributePointer(value, size);
+		}
 	}
 }
