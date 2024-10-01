@@ -6,11 +6,13 @@
 #include "Shader.h"
 #include "VertexArrayObject.h"
 #include "VertexBufferObject.h"
+#include "Signal.h"
 
 using namespace Kiwi;
 
 int main(void)
 {
+
     if (!glfwInit())
         return -1;
 
