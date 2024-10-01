@@ -74,6 +74,9 @@
     <ClInclude Include="VertexBufferObject.h">
       <Filter>Headers\Core\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Basic.vert">
