@@ -144,6 +144,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Documents\Visual Studio 2022\Libraries\glad\src\glad.c" />
+    <ClCompile Include="ElementBufferObject.cpp" />
+    <ClCompile Include="ElementBufferObject.h" />
     <ClCompile Include="Instance.cpp" />
     <ClCompile Include="Instance3d.cpp" />
     <ClCompile Include="Main.cpp" />

@@ -38,4 +38,11 @@ namespace Kiwi {
 			CreateAttributePointer(value, size);
 		}
 	}
+
+	uint32 VertexArrayObject::GetElementBufferObjectHandle() const {
+		uint32 handle = 0;
+		glBindVertexArray(Handle);
+		glGetVertexArrayiv(Handle, GL_ELEMENT_ARRAY_BUFFER_BINDING, (int*)&handle);
+		return handle;
+	}
 }

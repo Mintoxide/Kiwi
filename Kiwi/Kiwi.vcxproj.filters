@@ -72,6 +72,12 @@
     <ClCompile Include="Instance3d.cpp">
       <Filter>Source\Core\DataModel</Filter>
     </ClCompile>
+    <ClCompile Include="ElementBufferObject.h">
+      <Filter>Headers\Core\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementBufferObject.cpp">
+      <Filter>Source\Core\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">

@@ -17,6 +17,7 @@ namespace Kiwi {
 		VertexArrayObject();
 		void MakeCurrent();
 		void CreateAttributes(std::initializer_list<int> values);
+		uint32 GetElementBufferObjectHandle() const;
 		void CreateAttributePointer(
 			int32 attribute_count,
 			int32 total_count,
