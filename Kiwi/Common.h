@@ -9,8 +9,8 @@
 #include <stdexcept>
 #include <vector>
 
-using uint64 = unsigned long;
-using int64 = long;
+using uint64 = unsigned long long;
+using int64 = long long;
 using int32 = int;
 using uint32 = unsigned int;
 using uint8 = unsigned char;
